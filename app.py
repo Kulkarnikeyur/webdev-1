@@ -4,13 +4,14 @@ import os
 from random import *
 app = Flask(__name__)
 
-mydb = mysql.connector.connect(
-    host='brh51esi52fw7ncryz7o-mysql.services.clever-cloud.com',
-    user='ujofuri1anddaopg',
-    password='Vfg5VhW6X7Scb4tIoiCq',
-    database='brh51esi52fw7ncryz7o',
-    port=3306
-)
+def get_db_connection():
+    return mysql.connector.connect(
+        host='brh51esi52fw7ncryz7o-mysql.services.clever-cloud.com',
+        user='ujofuri1anddaopg',
+        password='Vfg5VhW6X7Scb4tIoiCq',
+        database='brh51esi52fw7ncryz7o',
+        port=3306
+    )
 app.secret_key="kkeyur"
 
 @app.route("/")
@@ -52,6 +53,7 @@ def score():
 
 @app.route("/congrats")
 def c():
+    mydb = get_db_connection()
     cursor = mydb.cursor()
     sql="insert into store (name,rand,score) values(%s,%s,%s)"
     values=(session.get("name"),session.get("random"),session.get("moves"))
@@ -72,6 +74,7 @@ def replay():
 
 @app.route("/history")
 def history():
+    mydb = get_db_connection()
     cursor = mydb.cursor()
     cursor.execute("SELECT name, rand, score FROM store ORDER BY score ASC")
     data = cursor.fetchall()  # returns a list of tuples
