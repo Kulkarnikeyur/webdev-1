@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score History</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='sh.css')}}" />
+  </head>
+  <body>
+    <img
+      src="{{ url_for('static', filename='Guess The Number.png') }}"
+      alt="logo"
+      class="logo"
+    />
+    <div class="main">
+      <h2>Past Scores</h2>
+      <table border="1">
+        <tr>
+          <th>Name</th>
+          <th>Random Number</th>
+          <th>Score</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <br />
+      <form action="/" method="get">
+        <button type="submit">Back to Home</button>
+      </form>
+    </div>
+  </body>
+</html>

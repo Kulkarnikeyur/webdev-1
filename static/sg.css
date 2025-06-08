@@ -1,0 +1,69 @@
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+.logo {
+  width: 50px;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-bottom: 140px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+div {
+  color: #f48fb1; /* soft pink for flashed messages */
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+p {
+  font-size: 22px;
+  color: #90caf9;
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  padding: 10px;
+  width: 200px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #333;
+  border-color: #f3f71b;
+  color: #f3f71b;
+}
+
+@media (max-width: 380px) {
+  p {
+    font-size: large;
+  }
+}

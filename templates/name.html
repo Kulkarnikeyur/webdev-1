@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='Guess The Number.png') }}"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='sn.css') }}" />
+  </head>
+  <body>
+    <img
+      src="{{ url_for('static', filename='Guess The Number.png') }}"
+      alt="logo"
+      class="logo"
+    />
+    <div class="main">
+      <p>Enter Your Name</p>
+      <form class="button" action="/start" method="post">
+        <input type="text" name="name" autofocus />
+        <button id="b1" type="submit" value="Submit">Submit</button>
+      </form>
+      <form id="back" action="/" method="get">
+        <button id="b2" type="submit" value="back">Back</button>
+      </form>
+    </div>
+  </body>
+</html>

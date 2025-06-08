@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='Guess The Number.png') }}"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="{{url_for('static',filename='sg.css')}}" />
+  </head>
+  <body>
+    <img
+      src="{{ url_for('static', filename='Guess The Number.png') }}"
+      alt="logo"
+      class="logo"
+    />
+    <div>{%for i in get_flashed_messages()%} {{i}} {% endfor %}</div>
+    <p>Enter a Number Between 1 To 100</p>
+    <form action="/score" method="post">
+      <input type="number" name="number" min="1" max="100" autofocus />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
